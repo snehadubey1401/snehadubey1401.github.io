@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Closet Check Case Study</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How I took Closet Check from a personal problem to a live POC: research, data, user stories and build.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&family=Public+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Sneha Dubey</a>
+    <ul>
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#resume">Résumé</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="wrap cs-hero">
+    <p class="label">Case file 01 · Consumer · Mobile web</p>
+    <h1>Closet Check</h1>
+    <p class="lead">A phone app that shows you what you already own before you buy. I took it from a personal frustration to a live product in two weeks, as the Product Owner on every step.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://snehadubey1401.github.io/closet-check/" target="_blank" rel="noopener">Try the live app</a>
+      <a class="btn" href="https://github.com/snehadubey1401/closet-check" target="_blank" rel="noopener">See the code</a>
+    </div>
+    <div class="facts">
+      <div><span class="label">Role</span><b>Product Owner, end to end</b></div>
+      <div><span class="label">Timeline</span><b>Oct to Nov 2026</b></div>
+      <div><span class="label">Status</span><b>Live POC, pilot next</b></div>
+      <div><span class="label">Tools</span><b>Google Forms, Sheets, Miro, Canva, GitHub, Claude</b></div>
+    </div>
+  </header>
+
+  <section class="wrap" aria-labelledby="screens">
+    <div class="sec-head"><p class="label">The product</p><h2 id="screens">What it looks like</h2></div>
+    <div class="gallery">
+      <figure><img src="../assets/closet-check/1-home.jpg" alt="Wardrobe home screen with search, type filters and clothing cards" loading="lazy"><figcaption>Wardrobe: search and filter everything you own</figcaption></figure>
+      <figure><img src="../assets/closet-check/6-add.jpg" alt="Add a piece screen with detected colour and type chips" loading="lazy"><figcaption>Add: one photo, colour detected, tap the type</figcaption></figure>
+      <figure><img src="../assets/closet-check/4-check.jpg" alt="Check before buying screen showing three similar black dresses with match percentages" loading="lazy"><figcaption>Check: similar pieces you already own, with % match</figcaption></figure>
+      <figure><img src="../assets/closet-check/5-saved.jpg" alt="Duplicate skipped screen showing rupees saved" loading="lazy"><figcaption>Skip it: the money you saved this month</figcaption></figure>
+      <figure><img src="../assets/closet-check/3-item.jpg" alt="Item detail showing times worn, last worn and cost per wear" loading="lazy"><figcaption>Item: times worn, last worn, cost per wear</figcaption></figure>
+      <figure><img src="../assets/closet-check/7-insights.jpg" alt="Insights screen with wardrobe stats, forgotten pieces and colour mix" loading="lazy"><figcaption>Insights: forgotten pieces and colour mix</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="problem">
+    <div class="sec-head"><p class="label">01 · Problem</p><h2 id="problem">From "another wardrobe app" to a second opinion before you buy</h2></div>
+    <div class="prose">
+      <p>I kept buying black tops I already owned. Market research showed I was not alone, and that the space is crowded: a 2026 comparison lists ten major wardrobe apps. They share one weakness: users must photograph their whole wardrobe up front, and most give up.</p>
+      <p>So I moved the product to a different moment, the moment of buying.</p>
+    </div>
+    <div class="tbl" style="margin-top:20px">
+      <table>
+        <thead><tr><th></th><th>Typical wardrobe app</th><th>Closet Check</th></tr></thead>
+        <tbody>
+          <tr><td><b>Moment of use</b></td><td>Getting dressed in the morning</td><td>Standing in a shop, or browsing Myntra</td></tr>
+          <tr><td><b>Core question</b></td><td>What should I wear?</td><td>Do I already own this?</td></tr>
+          <tr><td><b>How it fills up</b></td><td>Big upload session at the start</td><td>One item at a time, when you buy or wear it</td></tr>
+          <tr><td><b>Value</b></td><td>Outfit ideas</td><td>Money saved, fewer duplicates</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="research">
+    <div class="sec-head"><p class="label">02 · Research</p><h2 id="research">I tested my assumptions before building anything</h2></div>
+    <div class="prose">
+      <p>I wrote my assumptions down first, then built an 18-question Google Form where every question tested one of them. I shared it through Instagram stories, my product page and WhatsApp, exported the answers to Google Sheets and scored each assumption against a success threshold set in advance.</p>
+    </div>
+    <div class="stats" style="margin-top:24px">
+      <div class="stat"><b>6 of 6</b><span>had bought something similar to what they already owned</span></div>
+      <div class="stat"><b>4 of 6</b><span>wear less than a quarter of their wardrobe</span></div>
+      <div class="stat"><b>4.3 / 5</b><span>average rating for "snap in the shop, see what you own"</span></div>
+      <div class="stat risk"><b>3 of 6</b><span>would photograph each item. The main risk.</span></div>
+    </div>
+    <div class="tbl" style="margin-top:20px">
+      <table>
+        <thead><tr><th>Assumption</th><th>Validated if</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Duplicate buying is common</td><td>50%+ say often or a few times</td><td class="ok">Validated</td></tr>
+          <tr><td>People don't know what they own</td><td>Many low-confidence answers (average 2.7 / 5)</td><td class="ok">Validated</td></tr>
+          <tr><td>The pre-purchase check is wanted</td><td>Average rating 4 or higher</td><td class="ok">Validated (4.3)</td></tr>
+          <tr><td>People will photograph items one at a time</td><td>60%+ yes or maybe</td><td class="no">Not validated (50%)</td></tr>
+          <tr><td>Existing apps fail because setup takes effort</td><td>"Too long to add clothes" is the top reason</td><td class="muted">Not tested: nobody had tried an app</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose" style="margin-top:24px">
+      <h3>How I analysed it</h3>
+      <ol>
+        <li><b>Cleaned the data:</b> standardised city names and removed names and phone numbers.</li>
+        <li><b>Cross-tabulated:</b> frequent duplicate buyers rated their wardrobe knowledge 1 to 3; people with an organised cupboard rated it 4. Not seeing your wardrobe drives duplicates.</li>
+        <li><b>Looked for contradictions:</b> asked alone, the pre-purchase check scored highest; ranked against other features, it came fourth. Search and "not worn in months" were valued more.</li>
+        <li><b>Named the limits:</b> six responses from my own network is an early signal, not proof.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="decisions">
+    <div class="sec-head"><p class="label">03 · Decisions</p><h2 id="decisions">Every design decision traces back to a finding</h2></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Finding</th><th>Decision</th></tr></thead>
+        <tbody>
+          <tr><td>People love the outcome but won't do the photo work</td><td>Add a piece in under 10 seconds: automatic colour, one tap for type, everything else optional</td></tr>
+          <tr><td>Search by colour or type was among the most valued features</td><td>Search bar on the home screen, plain words like "black dress"</td></tr>
+          <tr><td>People shop online as much as in stores</td><td>The check accepts a shopping-app screenshot, not only a camera photo</td></tr>
+          <tr><td>Forgotten clothes are a common pain</td><td>Wear logging on every item and "forgotten gems" in Insights</td></tr>
+          <tr><td>The hero feature is not settled</td><td>Build both search and the check; the pilot shows which one people use</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols" style="margin-top:20px">
+      <div class="card"><p class="label">Persona</p><h3>Priya, 27, works in tech in Bangalore</h3><p class="muted" style="font-size:15px">Shops two to three times a month across Myntra, Instagram sellers and malls. Owns three almost identical black tops. Would only use an app that takes seconds. (A composite from the survey.)</p></div>
+      <div class="card"><p class="label">Problem statement</p><p style="font-size:15px">Young working women in Indian cities who shop often buy near-duplicates because they cannot see their whole wardrobe at the moment of buying.</p><p class="label" style="margin-top:6px">North Star metric</p><p style="font-size:15px">Duplicate purchases avoided per active user per month.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="backlog">
+    <div class="sec-head"><p class="label">04 · Backlog</p><h2 id="backlog">5 epics, 15 user stories, scoped with MoSCoW</h2></div>
+    <div class="cols">
+      <div class="card">
+        <h3>Sample stories with acceptance criteria</h3>
+        <p class="story"><b>US-1.1</b>As a shopper, I want to add a piece with one photo, so that building my wardrobe takes almost no effort.</p>
+        <ul><li>Given I take a photo, I see it with a suggested colour.</li><li>Given I tap a type, Save becomes active.</li><li>Given I save, the item appears first and I see how many seconds it took.</li></ul>
+        <p class="story"><b>US-3.1</b>As a shopper in a store or on a shopping app, I want to snap or screenshot an item, so that I can check it against my wardrobe.</p>
+        <ul><li>Given I scan an item and tap its type, I see owned pieces with 70%+ match, best first.</li><li>Given nothing matches, I see "nothing like this, go ahead".</li></ul>
+      </div>
+      <div class="card">
+        <h3>What made the cut</h3>
+        <ul>
+          <li><b>Must:</b> one-photo add with auto colour, search and filters, check before buying, no login</li>
+          <li><b>Should:</b> wear logging, forgotten items, cost per wear, money saved</li>
+          <li><b>Could:</b> colour mix chart</li>
+          <li><b>Won't, this version:</b> outfit planner, AI garment recognition, accounts and sync, order-email import</li>
+        </ul>
+        <p class="muted" style="font-size:15px">Rule: build only what tests the core promise and the main risk.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="design">
+    <div class="sec-head"><p class="label">05 · Design</p><h2 id="design">Four flows, none longer than four steps</h2></div>
+    <div class="flow" role="list">
+      <div class="lane" role="listitem"><span class="name">Add a piece</span><div class="steps"><span>Snap a photo</span><i>→</i><span>Colour detected</span><i>→</i><span>Tap the type</span><i>→</i><span>Saved in seconds</span></div></div>
+      <div class="lane" role="listitem"><span class="name">Find what I own</span><div class="steps"><span>Type a search</span><i>→</i><span>Matching items</span><i>→</i><span>Item details</span><i>→</i><span>Wore it today</span></div></div>
+      <div class="lane core" role="listitem"><span class="name">Check before buying</span><div class="steps"><span>Snap or screenshot</span><i>→</i><span>Tap the type</span><i>→</i><span>Similar pieces with % match</span><i>→</i><span>Skip and save, or buy and add</span></div></div>
+      <div class="lane" role="listitem"><span class="name">Review habits</span><div class="steps"><span>Insights</span><i>→</i><span>Forgotten gems</span><i>→</i><span>Item details</span></div></div>
+    </div>
+    <p class="muted" style="margin-top:16px;max-width:68ch">I mapped the flows and nine screens in Miro first, then built from them. The check path is the differentiator.</p>
+  </section>
+
+  <section class="wrap" aria-labelledby="build">
+    <div class="sec-head"><p class="label">06 · Build</p><h2 id="build">A one-page web app, free to host and private by default</h2></div>
+    <div class="cols">
+      <div class="card">
+        <h3>How it works</h3>
+        <ul>
+          <li><b>Colour detection:</b> the photo is shrunk to a 64 × 64 grid, the background is ignored, and the most common colour is matched to a named colour.</li>
+          <li><b>Similarity:</b> 55% colour closeness and 45% garment type. 70% or more counts as similar.</li>
+          <li><b>Storage:</b> clothes and photos stay in the browser on the user's own phone.</li>
+          <li><b>Hosting:</b> GitHub Pages serves the single file for free.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Trade-offs I chose</h3>
+        <ul>
+          <li><b>Web app, not native:</b> works on any phone with one link; no push notifications.</li>
+          <li><b>No backend:</b> no cost or login; no sync across devices.</li>
+          <li><b>Manual type, automatic colour:</b> keeps adding under 10 seconds without an AI service.</li>
+        </ul>
+        <p class="muted" style="font-size:15px">I worked as the Product Owner; Claude was my engineering partner. I owned the requirements, acceptance criteria and testing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="next">
+    <div class="sec-head"><p class="label">07 · What's next</p><h2 id="next">Measure behaviour, not opinions</h2></div>
+    <div class="prose">
+      <ol>
+        <li><b>Two-week pilot with 5 users:</b> measure seconds to add, items added, checks run, skips and week-2 return.</li>
+        <li><b>Interviews</b> on what made adding clothes easy or annoying, and which feature people actually used.</li>
+        <li><b>Grow the survey</b> to 30+ responses beyond my own network.</li>
+        <li><b>Decide:</b> persevere, pivot or narrow. If people skip adding clothes, test order-email import and AI tagging.</li>
+      </ol>
+    </div>
+    <div class="btns" style="margin-top:28px">
+      <a class="btn primary" href="https://snehadubey1401.github.io/closet-check/" target="_blank" rel="noopener">Try the live app</a>
+      <a class="btn" href="../index.html#work">Back to all work</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Sneha Dubey · Product Owner</p>
+    <div class="btns"><a class="btn" href="https://github.com/snehadubey1401" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://www.instagram.com/thinkproductwithsneha/" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+</footer>
+</body>
+</html>
